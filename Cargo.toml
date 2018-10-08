@@ -1,0 +1,7 @@
+[package]
+name = "rss_parser"
+version = "0.1.0"
+authors = ["Francesco <francesco@piva.online>"]
+
+[dependencies]
+rss = "1.0"
