@@ -1,0 +1,42 @@
+https://news.ycombinator.com/rss "Hacker News"
+http://feeds.feedburner.com/hackread "Hacks"
+http://www.devdungeon.com/rss.xml "Hacks"
+http://www.howtoforge.com/node/feed "HowToForge-Linux"
+http://distrowatch.com/news/dw.xml "DistroWatch-Linux"
+"-------------- LINUX --"
+https://linuxfr.org/news.atom "LinuxFR"
+https://www.archlinux.org/feeds/news/ "Arch"
+http://www.linuxjournal.com/node/feed "LinuxJournal"
+"-------------- SCIENCE --"
+http://phys.org/rss-feed/technology-news/ "Phys-Technology"
+http://rss.sciam.com/sciam/technology "ScientificAmerican"
+http://feeds.newscientist.com/science-news "NewScientist"
+http://feeds.feedburner.com/TechCrunch/ "TechCrunch-TechGadgets"
+http://www.theverge.com/rss/full.xml "TheVerge-TechGadgets"
+http://motherboard.vice.com/rss "MotherBoard-TechGadgets"
+https://www.digitalocean.com/community/tutorials/feed "DigitalOcean-Tutorials"
+https://www.openbriefing.org/feed/ "OpenBriefing"
+http://robert.ocallahan.org/feeds/posts/default
+http://nautil.us/rss/all
+https://feeds.feedburner.com/codinghorror
+http://feeds2.feedburner.com/catonmat
+https://research.swtch.com/
+http://adam.herokuapp.com/
+http://www.pwop.com/feed.aspx?show=dotnetrocks&filetype=master&tags=Cloud%2CContainers%2CCraftsmanship%2CEmbedded%20Systems%2CFramework%2CFunctional%20Programming%2CGeek%20Out%2CInstallation%2CMachine%20Learning%2CMicroservices%2CParallelism%2COpen%20Source%2CSecurity%2CServerless%2CVirtualization
+http://feeds.feedburner.com/HerdingCode
+http://coreint.org/podcast.xml
+https://talkpython.fm/episodes/rss
+http://atp.fm/episodes?format=rss
+http://feeds.feedburner.com/HighScalability
+https://bravenewgeek.com/feed/
+http://antirez.com/rss "AntiRez"
+"-------------- PODCASTS GEEK --"
+http://scripting.com/rss.xml
+http://shoptalkshow.com/feed/podcast/
+https://blog.codepen.io/feed/podcast/
+https://www.badvoltage.org/feed/ogg/
+http://leoville.tv/podcasts/sn.xml
+http://thesparkgap.net/rss/
+https://www.embedded.fm/blog/?format=rss
+https://www.embedded.fm/?format=rss
+http://softwareengineeringdaily.com/feed/podcast/
