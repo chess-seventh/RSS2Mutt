@@ -37,8 +37,8 @@ fn read_file(curr_file: String) -> File {
 
 // the function that will get the new information from the feed
 fn feed_getter(feed: Feed) -> bool {
-    println!("{}", feed.url);
-    println!("{}", feed.id);
+    let channel = Channel::from_url(feed.url).unwrap();
+
     return true;
 }
 
