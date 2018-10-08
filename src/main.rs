@@ -1,4 +1,4 @@
-// use rss::Channel;
+use rss::Channel;
 use std::fs::File;
 // use std::io::{self, BufReader};
 use std::io::BufReader;
