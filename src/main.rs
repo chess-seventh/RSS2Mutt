@@ -1,6 +1,8 @@
-use rss::Channel;
+// use rss::Channel;
 use std::fs::File;
+// use std::io::{self, BufReader};
 use std::io::BufReader;
+use std::io::prelude::*;
 extern crate rss;
 
 
@@ -17,15 +19,15 @@ pub struct RssPost {
 // this struct is the output of each feed
 pub struct Feed {
     pub id: i32,
-    pub title: String,
-    pub url: String,
+    // pub title: String,
+    pub url: String
 }
 
 // this is the function that will save the parsed feed to the inbox
 // I should put in parameters the struct RssPost
-fn send_to_mailbox(feed: String, title: String, link: String, summary: String, pub_parsed: String) -> bool {
-    return true;
-}
+// fn send_to_mailbox(feed: String, title: String, link: String, summary: String, pub_parsed: String) -> bool {
+//     return true;
+// }
 
 // function that reads a file in my directory with all the rss feeds
 fn read_file(curr_file: String) -> File {
@@ -34,13 +36,27 @@ fn read_file(curr_file: String) -> File {
 }
 
 // the function that will get the new information from the feed
-fn feed_getter() {
-
+fn feed_getter(feed: Feed) -> bool {
+    println!("{}", feed.url);
+    println!("{}", feed.id);
+    return true;
 }
 
 // duh ! dis a main yo !
 fn main() {
-    println!("Hello, world!");  // what else ?
-    let opened_file = read_file("/home/seventh/.rsst/rss.txt".to_string());
+    let opened_file = read_file("./rss.txt".to_string());
+    let opened_file = BufReader::new(opened_file);
+
+    let mut i = 0;
+
+    for line in opened_file.lines() {
+        //println!("{}", line.unwrap());
+        let feed = Feed {
+            id: i,
+            url: line.unwrap(),
+        };
+        feed_getter(feed);
+        i = i + 1;
+    }
 }
 
