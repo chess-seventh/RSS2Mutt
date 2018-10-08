@@ -24,13 +24,13 @@ pub struct Feed {
 // this is the function that will save the parsed feed to the inbox
 // I should put in parameters the struct RssPost
 fn send_to_mailbox(feed: String, title: String, link: String, summary: String, pub_parsed: String) -> bool {
-    true;
+    return true;
 }
 
 // function that reads a file in my directory with all the rss feeds
 fn read_file(curr_file: String) -> File {
     let file = File::open(curr_file).unwrap();
-    file;
+    return file;
 }
 
 // the function that will get the new information from the feed
