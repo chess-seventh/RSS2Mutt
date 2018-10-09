@@ -38,14 +38,15 @@ fn read_file(curr_file: String) -> File {
 
 // the function that will get the new information from the feed
 fn feed_getter(feed: Feed) -> bool {
-    let channel = Channel::from_url(feed.url).unwrap();
+    let channel = Channel::from_url(&feed.url).unwrap();
+    println!("{:?}", channel);
 
     return true;
 }
 
 // duh ! dis a main yo !
 fn main() {
-    let opened_file = read_file("./rss.txt".to_string());
+    let opened_file = read_file("./rss-simple.txt".to_string());
     let opened_file = BufReader::new(opened_file);
 
     let mut i = 0;
@@ -59,5 +60,8 @@ fn main() {
         feed_getter(feed);
         i = i + 1;
     }
+
+
+
 }
 
