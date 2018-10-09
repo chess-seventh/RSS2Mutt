@@ -1,3 +1,4 @@
+use std::fmt;
 use rss::Channel;
 use std::fs::File;
 // use std::io::{self, BufReader};
