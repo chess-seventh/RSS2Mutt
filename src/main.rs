@@ -4,6 +4,7 @@ use std::fs::File;
 // use std::io::{self, BufReader};
 use std::io::BufReader;
 use std::io::prelude::*;
+use std::io;
 extern crate rss;
 
 
@@ -19,8 +20,7 @@ pub struct RssPost {
 
 // this struct is the output of each feed
 pub struct Feed {
-    pub id: i32,
-    // pub title: String,
+    pub id: u32,
     pub url: String
 }
 
@@ -37,16 +37,29 @@ fn read_file(curr_file: String) -> File {
 }
 
 // the function that will get the new information from the feed
-fn feed_getter(feed: Feed) -> bool {
-    let channel = Channel::from_url(&feed.url).unwrap();
-    println!("{:?}", channel);
+fn feed_getter(feed: Feed) -> io::Result<()> {
+    let mut channel = Channel::from_url(&feed.url).unwrap();
+//    let mut channel = Channel::from_url(&feed.url)?;
+  match channel {
+      //Err(e) => return Err(e),
+      Err(e) => {
+          println!("this feed failed to retrieve: {}", feed.url)
+      },
+      Ok(c) => c,
+  };
 
-    return true;
+   println!("{:?}", channel);
+   println!("");
+   println!("");
+   println!("");
+   println!("");
+   println!("");
+   println!("{}", feed.url);
 }
 
 // duh ! dis a main yo !
 fn main() {
-    let opened_file = read_file("./rss-simple.txt".to_string());
+    let opened_file = read_file("./rss.txt".to_string());
     let opened_file = BufReader::new(opened_file);
 
     let mut i = 0;
