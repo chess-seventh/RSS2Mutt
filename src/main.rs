@@ -1,10 +1,8 @@
-use std::fmt;
 use rss::Channel;
 use std::fs::File;
 // use std::io::{self, BufReader};
 use std::io::BufReader;
 use std::io::prelude::*;
-use std::io;
 extern crate rss;
 
 
@@ -38,14 +36,14 @@ fn read_file(curr_file: String) -> File {
 
 // the function that will get the new information from the feed
 fn feed_getter(feed: Feed) {
-    let mut channel = Ok(Channel::from_url(&feed.url).unwrap());
+    let channel = Channel::from_url(&feed.url);
 //    let mut channel = Channel::from_url(&feed.url)?;
   match channel {
       //Err(e) => return Err(e),
       Err(e) => {
-          println!("this feed failed to retrieve: {}", feed.url)
+          println!("this feed failed to retrieve: {} {}", feed.url, e)
       },
-      _ => println!("{:?}", channel),
+      Ok(channel) => println!("{:?}", channel),
   };
 
 }
