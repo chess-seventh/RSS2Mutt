@@ -37,14 +37,14 @@ fn read_file(curr_file: String) -> File {
 // the function that will get the new information from the feed
 fn feed_getter(feed: Feed) {
     let channel = Channel::from_url(&feed.url);
-//    let mut channel = Channel::from_url(&feed.url)?;
-  match channel {
-      //Err(e) => return Err(e),
-      Err(e) => {
-          println!("this feed failed to retrieve: {} {}", feed.url, e)
-      },
-      Ok(channel) => println!("{:?}", channel),
-  };
+    //    let mut channel = Channel::from_url(&feed.url)?;
+    match channel {
+        //Err(e) => return Err(e),
+        Err(e) => {
+            println!("this feed failed to retrieve: {} {}", feed.url, e)
+        },
+        Ok(channel) => println!("{:?}", channel),
+    };
 
 }
 
