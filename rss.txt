@@ -3,16 +3,13 @@ http://feeds.feedburner.com/hackread
 http://www.devdungeon.com/rss.xml
 http://www.howtoforge.com/node/feed
 http://distrowatch.com/news/dw.xml
-https://linuxfr.org/news.atom
 https://www.archlinux.org/feeds/news/
 http://www.linuxjournal.com/node/feed
 http://phys.org/rss-feed/technology-news/
 http://rss.sciam.com/sciam/technology
 http://feeds.newscientist.com/science-news
 http://feeds.feedburner.com/TechCrunch/
-http://www.theverge.com/rss/full.xml
 http://motherboard.vice.com/rss
-https://www.digitalocean.com/community/tutorials/feed
 https://www.openbriefing.org/feed/
 http://robert.ocallahan.org/feeds/posts/default
 http://nautil.us/rss/all
