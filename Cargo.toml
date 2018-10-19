@@ -4,8 +4,7 @@ version = "0.1.0"
 authors = ["Francesco <francesco@piva.online>"]
 
 [dependencies]
-rss = { version = "1.5.0", features = ["from_url"] }
+rss = { version = "1.6.0", features = ["from_url"] }
+chrono = "0.4"
 
-[patch.crates-io]
-rss = { git = 'https://github.com/chess-seventh/rss', branch = 'develop' }
 

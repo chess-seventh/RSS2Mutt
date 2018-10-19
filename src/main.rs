@@ -1,32 +1,30 @@
 use rss::Channel;
 use std::fs::File;
-// use std::io::{self, BufReader};
+use chrono::*;
 use std::io::BufReader;
 use std::io::prelude::*;
 extern crate rss;
+extern crate chrono;
+
 
 
 // this is the rss parsed post to save to the inbox
-pub struct RssPost {
-    pub author: Option<String>,
-    pub title: Option<String>,
-    pub feed: Option<String>,
-    pub link: Option<String>,
-    pub description: Option<String>,
+pub struct RssPost  <'a> {
+    // pub feed: Option<&'a str>,
+    pub feed: String,
+    pub title: Option<&'a str>,
+    pub link: Option<&'a str>,
+    pub description: Option<&'a str>,
+    pub date: Option<Date<Utc>>,
 }
 
 
 // this struct is the output of each feed
 pub struct Feed {
     pub id: u32,
+    pub feed_name: String,
     pub url: String
 }
-
-// this is the function that will save the parsed feed to the inbox
-// I should put in parameters the struct RssPost
-// fn send_to_mailbox(feed: String, title: String, link: String, summary: String, pub_parsed: String) -> bool {
-//     return true;
-// }
 
 // function that reads a file in my directory with all the rss feeds
 fn read_file(curr_file: String) -> File {
@@ -41,29 +39,53 @@ fn feed_getter(feed: Feed) {
         Err(e) => {
             println!("this feed failed to retrieve: {} {}", feed.url, e)
         },
-        Ok(channel) => println!("{:?}", channel),
+        Ok(channel) => {
+            let res_parse = parse_channel(channel, feed.feed_name);
+            match res_parse {
+                true => return,
+                false => {
+                    println!("something went bad");
+                    return;
+                },
+            };
+        },
     };
-
 }
 
-// duh ! dis a main yo !
+// function that parses the feed
+fn parse_channel(chan: rss::Channel, feed_name: String) -> bool {
+    // let chan_items = chan.into_items;
+    for i in chan.items() {
+        println!{"{:?}", i};
+        let rsspost = RssPost {
+            title: i.title(),
+            feed: feed_name.to_owned(),
+            link: i.link(),
+            description: i.description(),
+            date: None
+        };
+        println!{""};
+        println!{"{:?}", rsspost.title};
+        println!{"{:?}", rsspost.link};
+    }
+    return true;
+}
+
+// main
 fn main() {
     let opened_file = read_file("./rss.txt".to_string());
     let opened_file = BufReader::new(opened_file);
 
-    let mut i = 0;
-
-    for line in opened_file.lines() {
-        //println!("{}", line.unwrap());
+    for (i, line) in opened_file.lines().enumerate() {    // Nor
+        let mut curr_line = line.unwrap();
+        let mut split = curr_line.split(' ');
         let feed = Feed {
-            id: i,
-            url: line.unwrap(),
+            id: i as u32,
+            url: split.next().unwrap().to_owned(),
+            feed_name: split.next().unwrap().to_owned(),
         };
         feed_getter(feed);
-        i = i + 1;
-    }
-
-
+    };
 
 }
 
