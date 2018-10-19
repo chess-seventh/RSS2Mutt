@@ -1,36 +1,29 @@
-https://news.ycombinator.com/rss
-http://feeds.feedburner.com/hackread
-http://www.devdungeon.com/rss.xml
-http://www.howtoforge.com/node/feed
-http://distrowatch.com/news/dw.xml
-https://www.archlinux.org/feeds/news/
-http://www.linuxjournal.com/node/feed
-http://phys.org/rss-feed/technology-news/
-http://rss.sciam.com/sciam/technology
-http://feeds.newscientist.com/science-news
-http://feeds.feedburner.com/TechCrunch/
-http://motherboard.vice.com/rss
-https://www.openbriefing.org/feed/
-http://robert.ocallahan.org/feeds/posts/default
-http://nautil.us/rss/all
-https://feeds.feedburner.com/codinghorror
-http://feeds2.feedburner.com/catonmat
-https://research.swtch.com/
-http://adam.herokuapp.com/
-http://www.pwop.com/feed.aspx?show=dotnetrocks&filetype=master&tags=Cloud%2CContainers%2CCraftsmanship%2CEmbedded%20Systems%2CFramework%2CFunctional%20Programming%2CGeek%20Out%2CInstallation%2CMachine%20Learning%2CMicroservices%2CParallelism%2COpen%20Source%2CSecurity%2CServerless%2CVirtualization
-http://feeds.feedburner.com/HerdingCode
-http://coreint.org/podcast.xml
-https://talkpython.fm/episodes/rss
-http://atp.fm/episodes?format=rss
-http://feeds.feedburner.com/HighScalability
-https://bravenewgeek.com/feed/
-http://antirez.com/rss
-http://scripting.com/rss.xml
-http://shoptalkshow.com/feed/podcast/
-https://blog.codepen.io/feed/podcast/
-https://www.badvoltage.org/feed/ogg/
-http://leoville.tv/podcasts/sn.xml
-http://thesparkgap.net/rss/
-https://www.embedded.fm/blog/?format=rss
-https://www.embedded.fm/?format=rss
-http://softwareengineeringdaily.com/feed/podcast/
+https://news.ycombinator.com/rss "HackerNews"
+http://feeds.feedburner.com/hackread "HackRead"
+http://www.devdungeon.com/rss.xml "DevDungeon"
+http://www.howtoforge.com/node/feed "HowtoForge"
+http://distrowatch.com/news/dw.xml "DistroWatch"
+https://www.archlinux.org/feeds/news/ "ArchLinux"
+http://www.linuxjournal.com/node/feed "LinuxJournal"
+http://phys.org/rss-feed/technology-news/ "PhysTechnology"
+http://rss.sciam.com/sciam/technology "ScientificAmerican"
+http://feeds.newscientist.com/science-news "NewScientist"
+http://feeds.feedburner.com/TechCrunch/ "TechCrunch"
+http://motherboard.vice.com/rss "MotherboardVice"
+https://www.openbriefing.org/feed/ "OpenBriefing"
+http://robert.ocallahan.org/feeds/posts/default "Blog-R.Ocallahan"
+https://feeds.feedburner.com/codinghorror "CodingHorror"
+http://feeds2.feedburner.com/catonmat "CatOnMat"
+http://feeds.feedburner.com/HerdingCode "HerdingCode"
+http://coreint.org/podcast.xml "Podcast-CoreInt"
+https://talkpython.fm/episodes/rss "Podcast-TalkPython"
+http://atp.fm/episodes?format=rss "ATP"
+http://feeds.feedburner.com/HighScalability "Podcast-HighScalability"
+https://bravenewgeek.com/feed/ "Podcast-BraveNewGeek"
+http://antirez.com/rss "Podcast-AntiRez"
+http://scripting.com/rss.xml "Podcast-Scripting"
+http://shoptalkshow.com/feed/podcast/ "Podcast-ShopTalkShow"
+https://blog.codepen.io/feed/podcast/ "Podcast-CodePen"
+https://www.badvoltage.org/feed/ogg/ "Podcast-BadVoltage"
+http://leoville.tv/podcasts/sn.xml "Podcast-LeoVille"
+http://softwareengineeringdaily.com/feed/podcast/ "Podcast-SoftwareEngineeringDaily"
