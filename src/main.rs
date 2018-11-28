@@ -5,7 +5,7 @@ use html2runes::markdown::convert_string;
 use std::fs::File;
 use std::path::Path;
 use chrono::{DateTime, Utc};
-
+use core::hash::Hash
 use std::error::Error;
 
 extern crate clap;
@@ -13,8 +13,7 @@ extern crate rss;
 extern crate chrono;
 extern crate reqwest;
 extern crate html2runes;
-
-static MAILDIR: &'static str = "/home/seventh/test-output/new";
+static MAILDIR: &'static str = "/home/seventh/Mail/RSS/new/";
 // this is the rss parsed post to save to the inbox
 pub struct RssPost  <'a> {
     // pub feed: Option<&'a str>,
@@ -25,6 +24,7 @@ pub struct RssPost  <'a> {
     pub date: Option<reqwest::header::HeaderValue>,
     pub body: Option<String>,
     pub filename: Option<String>,
+    pub idhash: Option<String>,
 }
 
 // this struct is the output of each feed
@@ -64,7 +64,6 @@ fn create_filename() -> String {
     let n: DateTime<Utc> = Utc::now();
     let dt = n.format("%Y%m%d%H%M%S%f").to_string();
     let mut fname = String::from(MAILDIR);
-    fname.push_str("/");
     fname.push_str(&dt);
     fname.push_str("_uid.txt");
     return fname;
@@ -81,7 +80,8 @@ fn parse_channel(chan: rss::Channel, feed_name: String) -> bool {
             description: i.description(),
             date: None,
             body: None,
-            filename: None
+            filename: None,
+            idhash: None
         };
         let body = reqwest::get((&rsspost.link).to_owned().unwrap()).unwrap();
         rsspost.date = Some(body.headers().get("date").unwrap().to_owned());
@@ -89,7 +89,6 @@ fn parse_channel(chan: rss::Channel, feed_name: String) -> bool {
         rsspost.filename = Some(create_filename());
 
         // check if in DB or not
-        //
         save_to_file(rsspost);
 
         // add to DB if not in DB
