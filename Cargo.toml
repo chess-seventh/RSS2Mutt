@@ -7,7 +7,6 @@ authors = ["Francesco <francesco@piva.online>"]
 rss = { version = "1.6.0", features = ["from_url"] }
 chrono = "0.4"
 reqwest = "0.9.3"
-nom = "^4.1"
 clap = "~2.20.5"
 html5ever = "~0.13.0"
 html5ever-atoms = "~0.2.0"
