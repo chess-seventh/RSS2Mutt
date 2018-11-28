@@ -5,6 +5,8 @@ use std::io::BufReader;
 use std::io::prelude::*;
 extern crate rss;
 extern crate chrono;
+extern crate reqwest;
+extern crate nom;
 
 
 
@@ -56,7 +58,6 @@ fn feed_getter(feed: Feed) {
 fn parse_channel(chan: rss::Channel, feed_name: String) -> bool {
     // let chan_items = chan.into_items;
     for i in chan.items() {
-        println!{"{:?}", i};
         let rsspost = RssPost {
             title: i.title(),
             feed: feed_name.to_owned(),
@@ -64,9 +65,11 @@ fn parse_channel(chan: rss::Channel, feed_name: String) -> bool {
             description: i.description(),
             date: None
         };
-        println!{""};
-        println!{"{:?}", rsspost.title};
-        println!{"{:?}", rsspost.link};
+        let body = reqwest::get((&rsspost.link).to_owned().unwrap()).unwrap();
+
+        let real_body = reqwest::get((body.url()).to_owned()).unwrap().text();
+        //println!{"{:?}", real_body};
+
     }
     return true;
 }
