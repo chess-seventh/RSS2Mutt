@@ -3,11 +3,12 @@ use std::fs::File;
 use chrono::*;
 use std::io::BufReader;
 use std::io::prelude::*;
+use html2runes::markdown::convert_string;
+extern crate clap;
 extern crate rss;
 extern crate chrono;
 extern crate reqwest;
-extern crate nom;
-
+extern crate html2runes;
 
 
 // this is the rss parsed post to save to the inbox
@@ -68,7 +69,8 @@ fn parse_channel(chan: rss::Channel, feed_name: String) -> bool {
         let body = reqwest::get((&rsspost.link).to_owned().unwrap()).unwrap();
 
         let real_body = reqwest::get((body.url()).to_owned()).unwrap().text();
-        //println!{"{:?}", real_body};
+        let final_out = convert_string(&real_body.unwrap());
+        // println!{"{:?}", final_out};
 
     }
     return true;
