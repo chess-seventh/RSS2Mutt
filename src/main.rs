@@ -5,15 +5,16 @@ use html2runes::markdown::convert_string;
 use std::fs::File;
 use std::path::Path;
 use chrono::{DateTime, Utc};
-use core::hash::Hash
+// use core::hash::Hash;
 use std::error::Error;
 
+extern crate core;
 extern crate clap;
 extern crate rss;
 extern crate chrono;
 extern crate reqwest;
 extern crate html2runes;
-static MAILDIR: &'static str = "/home/seventh/Mail/RSS/new/";
+static MAILDIR: &'static str = "/home/seventh/Mail/RSS/INBOX/new/";
 // this is the rss parsed post to save to the inbox
 pub struct RssPost  <'a> {
     // pub feed: Option<&'a str>,
